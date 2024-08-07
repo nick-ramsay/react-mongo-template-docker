@@ -9,14 +9,15 @@ import "./App.css";
 import Home from "../src/pages/Home/Home";
 
 import { datadogRum } from '@datadog/browser-rum';
+import { datadogLogs } from '@datadog/browser-logs'
 
 datadogRum.init({
   applicationId: keys.ddrum.react_rum_application_id,
   clientToken: keys.ddrum.react_rum_client_token,
-  site: 'datadoghq.com',
+  site: keys.ddrum.react_rum_dd_site,
   service: 'react-mongo-template',
-  env: 'staging',
-  version: '1.0.25',
+  env: 'production',
+  version: keys.ddrum.react_rum_dd_version,
   sessionSampleRate: 100,
   sessionReplaySampleRate: 100,
   traceSampleRate: 100,
@@ -39,7 +40,17 @@ datadogRum.init({
 
 });
 
-datadogRum.startSessionReplayRecording();
+datadogLogs.init({
+  clientToken: keys.ddrum.react_rum_client_token,
+  site: keys.ddrum.react_rum_dd_site,
+  service: 'react-mongo-template',
+  env: 'production',
+  version: keys.ddrum.react_rum_dd_version,
+  forwardErrorsToLogs: true,
+  sessionSampleRate: 100,
+})
+
+
 
 
 function App() {
