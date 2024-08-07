@@ -1,6 +1,9 @@
 import React from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import keys from "./keys";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Home from "../src/pages/Home/Home";
@@ -27,30 +30,30 @@ datadogRum.init({
   ]*/
   allowedTracingUrls: [
     { match: /http:\/\/localhost:3001/, propagatorTypes: ["datadog"] },
-    { match: /https\:\/\/react-mongo-template\.herokuapp\.com/, propagatorTypes: ["datadog"] }
+    { match: /https:\/\/react-mongo-template\.herokuapp\.com/, propagatorTypes: ["datadog"] }
   ],
-  beforeSend: (event, context) => {
-    // collect a RUM resource's response headers
-    if (event.type === 'resource' && (event.resource.type === "xhr" || event.resource.type === "fetch") && event.resource.method === "POST") {
-      console.log("⬇️ 'console.log(event)' output ⬇️")
-      console.log(event);
-      console.log("⬇️ 'console.log(context)' output ⬇️")
-      console.log(context);
-    }
-    return true
-  },
+  // beforeSend: (event, context) => {
+  //   // collect a RUM resource's response headers
+  //   return true
+  // },
 
 });
 
 datadogRum.startSessionReplayRecording();
 
+
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-      </Routes>
-    </Router>
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Home />
+      ),
+    }
+  ]);
+
+ return(
+    <RouterProvider router={router} />
   );
 }
 
