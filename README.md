@@ -1,6 +1,6 @@
 # MERN Sandbox
 
-##Getting Started
+## Getting Started
 
 Please use the following steps to start this application:
 
@@ -12,7 +12,7 @@ Please use the following steps to start this application:
 
 Once you've done this, try entering some new messages and deleting some messages. You should see RUM Sessions getting generated for your activity. You should also see that the `xhr` RUM Resource Events for your activity are getting correlated to backend, NodeJS traces. 
 
-##Uploading Source Maps
+## Uploading Source Maps
 
 To upload source maps, you'll need to exec into your `client` container and run the source map uploads. Please use the following steps to do so:
 
