@@ -50,6 +50,12 @@ datadogLogs.init({
   sessionSampleRate: 100,
 })
 
+datadogRum.setUser({
+  id: '1234',
+  name: 'John Doe',
+  email: 'john@doe.com',
+  plan: 'premium',
+})
 
 
 
@@ -63,7 +69,7 @@ function App() {
     }
   ]);
 
- return(
+  return (
     <RouterProvider router={router} />
   );
 }

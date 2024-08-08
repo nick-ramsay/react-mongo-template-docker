@@ -22,6 +22,4 @@ RUN yarn global add serve
 EXPOSE 3000
 
 # Command to run the app
-#CMD ["serve", "-s", "build"]
-#CMD sh -c "yarn start"
 CMD sh -c "yarn run build && serve -s build"

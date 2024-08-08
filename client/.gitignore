@@ -5,8 +5,9 @@
 package-original.json
 /.pnp
 .pnp.js
+
+#custom
 dd_source_map_upload.txt
-my_docker_commands.md
 docker-compose.yml
 
 # testing
@@ -14,7 +15,6 @@ docker-compose.yml
 
 # production
 /build
-source_map_upload_commands.txt
 
 # misc
 .DS_Store
