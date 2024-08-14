@@ -64,8 +64,9 @@ body {
   color: #282c34;
 }
 
-.btn-custom:hover {
+.btn-custom:hover, .btn-custom:active, .btn-custom:focus  {
   background-color: #2EA7C8;
+  color: #282c34;
 }       
 
 .btn-custom:focus {
@@ -92,6 +93,20 @@ body {
   box-shadow: none;
 }
 
+.accordion-item:last-of-type, .accordion-button.collapsed {
+  border-radius: 0;
+}
+
+.accordion-body {
+  border: 1px solid  #61dafb;
+  background-color: #343a40;
+}
+
+.accordion-button, .accordion-button:focus-within .accordion-button:hover, .accordion-button:active, .accordion-button:focus, .accordion-button, .accordion-button:not(.collapsed) {
+  background-color: #61dafb;
+  color: #282c34;
+  box-shadow: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

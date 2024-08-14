@@ -7,6 +7,7 @@ import keys from "./keys";
 import "./App.css";
 
 import Home from "../src/pages/Home/Home";
+import Alternate from "../src/pages/Alternate/Alternate";
 
 import { datadogRum } from '@datadog/browser-rum';
 import { datadogLogs } from '@datadog/browser-logs'
@@ -65,6 +66,12 @@ function App() {
       path: "/",
       element: (
         <Home />
+      ),
+    },
+    {
+      path: "/alternate",
+      element: (
+        <Alternate />
       ),
     }
   ]);
