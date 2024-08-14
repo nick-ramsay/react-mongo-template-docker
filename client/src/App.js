@@ -27,9 +27,6 @@ datadogRum.init({
   trackLongTasks: true,
   defaultPrivacyLevel: 'mask-user-input',
   //allowedTracingUrls: ["http://localhost:3001/", "https://react-mongo-template.herokuapp.com/"],
-  /*allowedTracingUrls: [
-    { match: [/http:\/\/localhost:3001/, /https\:\/\/react-mongo-template\.herokuapp\.com/], propagatorTypes: ["datadog"] }
-  ]*/
   allowedTracingUrls: [
     { match: /http:\/\/localhost:3001/, propagatorTypes: ["datadog"] },
     { match: /https:\/\/react-mongo-template\.herokuapp\.com/, propagatorTypes: ["datadog"] }
@@ -38,7 +35,6 @@ datadogRum.init({
   //   // collect a RUM resource's response headers
   //   return true
   // },
-
 });
 
 datadogLogs.init({
