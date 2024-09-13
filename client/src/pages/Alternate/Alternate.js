@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { datadogRum } from "@datadog/browser-rum";
 import { } from "../../sharedFunctions/sharedFunctions";
 import logo from "../../../src/logo.svg";
 import GithubLogo from "../../images/github_logos/GitHub_Logo_White.png";
@@ -9,7 +10,7 @@ const Alternate = () => {
 
 
   useEffect(() => {
-
+    datadogRum.addTiming("use_effect_called");
   }, []);
 
 

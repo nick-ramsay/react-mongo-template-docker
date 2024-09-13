@@ -130,6 +130,7 @@ const Home = () => {
     renderMessages();
     fetchDummyJsonApi();
     applyUser();
+    datadogRum.addTiming("use_effect_called");
   }, []);
 
   return (
