@@ -116,6 +116,12 @@ const Home = () => {
       plan: 'premium'
     })
   }
+
+  const applyUserProperties = () => {
+    datadogRum.setUserProperty('data', {
+      testUserProperty: "XYZ789"
+    });
+  }
   //END: Datadog RUM Functions
   ///////////////////////////////////////////
 
@@ -278,6 +284,13 @@ const Home = () => {
                         </div>
                         <div className="col-md-6">
                           <button className="btn btn-sm btn-outline-light" onClick={() => window.location.href = "./alternate"}>Go to Alternative View</button>
+                        </div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <button className="btn btn-sm btn-outline-success" onClick={() => applyUserProperties()}>
+                            Set User Property
+                          </button>
                         </div>
                       </div>
                     </div>
