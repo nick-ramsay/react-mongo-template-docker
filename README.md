@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+**NOTE:** If you're a Datadog employee, please reference the following internal documentation for detailed guidance on this sandbox: [Integrate Datadog on a MERN Application](https://datadoghq.atlassian.net/wiki/x/ygV9l)
+
 Please use the following steps to start this application:
 
 1. Create a RUM application in Datadog. Take note of the `applicationId` and `clientToken` values for this RUM application.
