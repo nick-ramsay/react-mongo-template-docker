@@ -25,7 +25,7 @@ To upload source maps, you'll need to exec into your `client` container and run 
 export DATADOG_API_KEY=<YOUR_DATADOG_API_KEY>
 
 datadog-ci sourcemaps upload ./build/static/js \
-  --service=react-mongo-template \
+  --service=react-mongo-template-docker \
   --release-version=<APPLICABLE_VERSION_OF_YOUR_APPLICATION> \
   --minified-path-prefix=http://localhost:3000/static/js
 ```

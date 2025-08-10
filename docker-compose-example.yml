@@ -22,7 +22,7 @@ services:
       - mongo
     environment:
       - NODE_ENV=production
-      - MONGO_URI=mongodb://mongo:27017/react-mongo-template
+      - MONGO_URI=mongodb://mongo:27017/react-mongo-template-docker
       - DD_AGENT_HOST=datadog-agent
       - DD_TRACE_AGENT_PORT=8126
 

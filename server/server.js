@@ -1,7 +1,7 @@
 const tracer = require('dd-trace').init({
   profiling: true,
   env: 'production',
-  service: 'react-mongo-template-server',
+  service: 'react-mongo-template-docker-server',
   ingestion: {
     // Any traces started will be sampled at 1.00% with a rate limit of 100 per second
     sampleRate: 1.0000
@@ -38,11 +38,18 @@ if (process.env.NODE_ENV === "production") {
 
 //Setting headers for CORS Policies
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header("Timing-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Credentials, x-datadog-origin, x-datadog-sampling-priority, x-datadog-parent-id, x-datadog-trace-id, Timing-Allow-Origin, traceparent");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
   res.header("Access-Control-Allow-Credentials", "true");
+  
+  // Handle preflight OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+    return;
+  }
+  
   next();
 });
 

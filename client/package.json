@@ -1,33 +1,38 @@
 {
-  "name": "client",
+  "name": "react-mongo-template-docker",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@datadog/browser-logs": "^5.23.3",
-    "@datadog/browser-rum": "^5.10.0",
+    "@datadog/browser-logs": "^6.2.1",
+    "@datadog/browser-rum": "^6.2.1",
     "@datadog/datadog-ci": "^2.23.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.20.0",
+    "axios": "^1.10.0",
     "dotenv": "^16.0.3",
     "moment": "^2.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^0.0.0",
+    "react-spinners": "^0.15.0",
     "save-dev": "^0.0.1-security",
+    "serve": "^14.2.4",
+    "web-vitals": "^4.2.4",
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "start:prod": "yarn install -g serve; serve -s build",
-    "build": "react-scripts build",
+    "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "yarn run build",
     "build:dev": "webpack --mode development ",
-    "build:prod": "webpack --mode production"
+    "build:prod": "webpack --mode production",
+    "dev": "vite"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,5 +49,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.5"
   }
 }

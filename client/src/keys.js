@@ -1,6 +1,7 @@
-exports.ddrum = {
-    react_rum_application_id: process.env.REACT_APP_RUM_APPLICATION_ID,
-    react_rum_client_token: process.env.REACT_APP_RUM_CLIENT_TOKEN,
-    react_rum_dd_site: process.env.REACT_APP_RUM_DD_SITE,
-    react_rum_dd_version: process.env.REACT_APP_RUM_VERSION
+const keys = {
+  react_rum_application_id: process.env.REACT_APP_RUM_APPLICATION_ID,
+  react_rum_client_token: process.env.REACT_APP_RUM_CLIENT_TOKEN,
+  react_rum_dd_version: process.env.REACT_APP_RUM_VERSION,
 };
+
+export default keys;

@@ -19,7 +19,7 @@ const Alternate = () => {
       <div className="App">
         <header className="App-header p-4">
           <h1>
-            React MongoDB Template
+            React Mongo Template - Dockerized
           </h1>
           <h4><code>Alternative Page</code></h4>
           <img src={logo} className="App-logo" alt="logo" />
